@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS sales;
+DROP TABLE IF EXISTS customers;
 DROP TABLE IF EXISTS bikes;
 
 CREATE TABLE bikes (
@@ -11,3 +13,15 @@ CREATE TABLE bikes (
   price int4
 );
 
+CREATE TABLE customers (
+  id serial4 PRIMARY KEY,
+  name VARCHAR(255),
+  address VARCHAR(255),
+  phone int8
+);
+
+CREATE TABLE sales (
+  id serial4 PRIMARY KEY,
+  bike_id int4 references bikes(id) ON DELETE CASCADE,
+  customer_id int4 references customers(id) ON DELETE CASCADE
+);

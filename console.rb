@@ -1,5 +1,7 @@
 require( 'pry-byebug' )
 require_relative( 'models/bike' )
+require_relative( 'models/sale' )
+require_relative( 'models/customer' )
 
 bike1 = Bike.new({'category' => 'Mens', 'type' => 'Road', 'brand_name' => 'Specialized', 'model' => 'Allez', 'colour' => 'red/black', 'size' => 'L', 'price' => 750.00})
 bike1.save()
@@ -83,6 +85,34 @@ bike40 = Bike.new({'category' => 'Mens', 'type' => 'BMX', 'brand_name' => 'Stole
 bike40.save()
 
 
+customer1 = Customer.new({ 'name' => 'David O Leary', 'address' => '77, The Murrays Brae EH17 8UJ', 'phone' => '12345678912'})
+customer1.save()
+customer2 = Customer.new({ 'name' => 'Tara O Leary', 'address' => '78, The Murrays Brae EH17 8UK', 'phone' => '12345678913'})
+customer2.save()
+customer3 = Customer.new({ 'name' => 'Conor O Leary', 'address' => '79, The Murrays Brae EH17 8UL', 'phone' => '12345678914'})
+customer3.save()
+customer4 = Customer.new({ 'name' => 'Liam O Leary', 'address' => '80, The Murrays Brae EH17 8UM', 'phone' => '12345678915'})
+customer4.save()
+customer5 = Customer.new({ 'name' => 'Ric McLaughlin', 'address' => '81, The Murrays Brae EH17 8UN', 'phone' => '12345678916'})
+customer5.save()
+
+
+sale1 = Sale.new({'bike_id' => bike1.id, 'customer_id' => customer1.id})
+sale1.save()
+sale2 = Sale.new({'bike_id' => bike2.id, 'customer_id' => customer1.id})
+sale2.save()
+sale3 = Sale.new({'bike_id' => bike3.id, 'customer_id' => customer2.id})
+sale3.save()
+sale4 = Sale.new({'bike_id' => bike4.id, 'customer_id' => customer1.id})
+sale4.save()
+sale5 = Sale.new({'bike_id' => bike5.id, 'customer_id' => customer2.id})
+sale5.save()
+sale6 = Sale.new({'bike_id' => bike3.id, 'customer_id' => customer5.id})
+sale6.save()
+sale7 = Sale.new({'bike_id' => bike20.id, 'customer_id' => customer4.id})
+sale7.save()
+sale8 = Sale.new({'bike_id' => bike34.id, 'customer_id' => customer3.id})
+sale8.save()
 
 
 
