@@ -4,5 +4,11 @@ require_relative('controllers/bikes_controller')
 
 
 get '/' do
-  erb :home
+  redirect to('/inventory')
+end
+
+
+get '/inventory' do
+  erb(:'inventory')
+
 end

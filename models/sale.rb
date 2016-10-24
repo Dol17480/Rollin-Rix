@@ -1,14 +1,15 @@
 require_relative('../db/sql_runner')
 
-class Sale
-
-  attr_reader( :id, :bike_id, :customer_id )
 
   def initialize( params )
     @id = params['id'].to_i
     @bike_id = params['bike_id'].to_i
     @customer_id = params['customer_id'].to_i
   end
+
+class Sale
+
+  attr_reader( :id, :bike_id, :customer_id )
 
   def save()
     sql = "INSERT INTO sales (bike_id, customer_id) VALUES (#{@bike_id}, #{@customer_id}) RETURNING *;"

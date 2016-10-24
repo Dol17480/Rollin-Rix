@@ -17,7 +17,6 @@ class Bike
   end
 
   def save()
-    db = PG.connect( { dbname: 'bike_shop', host: 'localhost' } )
     sql = "INSERT INTO bikes (
     category,
     type,

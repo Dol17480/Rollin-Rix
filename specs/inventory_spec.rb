@@ -1,18 +1,16 @@
-# require( 'minitest/autorun' )
-# require( 'minitest/rg' )
-# require_relative( '../models/sales' )
-# require_relative( '../models/bike' )
+require( 'minitest/autorun' )
+require( 'minitest/rg' )
+require_relative( '../models/bike' )
 
-# class TestSales < Minitest::Test
+class TestInventory < Minitest::Test
 
-#   def setup
-#     bikes = Bike.all
-#     @sales = Sale.new( bikes )
-#   end
+  def setup
+    @bikes = Bike.all
+  end
 
-#   def test_stock_count
-#     result = @sales.bikes_in_stock
-#     assert_equal( 40, result )
-#   end
+  def test_stock_count
+    result = @inventory.bikes_in_stock
+    assert_equal( 40, result )
+  end
 
-# end
+end
