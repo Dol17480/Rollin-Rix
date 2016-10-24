@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Bike
 
-  attr_reader( :category, :type, :brand_name, :model, :colour, :size, :price )
+  attr_reader( :category, :type, :brand_name, :model, :colour, :size, :price, :id )
 
   def initialize (params)
     @id = params["id"].to_i if params["id"]
@@ -74,6 +74,11 @@ class Bike
 
   def self.all()
     sql = "SELECT * FROM bikes;"
+    return Bike.map_items(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM bikes WHERE id = #{id}"
     return Bike.map_items(sql)
   end
 

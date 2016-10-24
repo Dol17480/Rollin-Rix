@@ -1,0 +1,15 @@
+<div>
+  <% @bikes.each do |bike| %>
+  <a href="/bikes/<%= bike.id  %>"></a>
+  <br><p>Category: <%= bike.category %> 
+  </p> Type: <%= bike.type %>
+  </p> Brand: <%= bike.brand_name %>
+  </p> Model: <%= bike.model %>
+  </p> Colour: <%= bike.colour %>
+  </p> Size: <%= bike.size %>
+  </p> Price: <%= bike.price %>
+  <br><hr>
+  <% end %>
+
+  <a href="/bikes/new">Add new bike</a><br>
+</div>

@@ -13,7 +13,7 @@ class Sale
   def save()
     sql = "INSERT INTO sales (bike_id, customer_id) VALUES (#{@bike_id}, #{@customer_id}) RETURNING *;"
     sale = SqlRunner.run(sql).first
-    @id = sale['id']
+    @id = sale['id'].to_i
   end
 
   def bike()
