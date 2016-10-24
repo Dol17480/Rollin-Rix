@@ -12,5 +12,10 @@ class Inventory
    return bikes.count
   end 
 
+  def stock_count
+     bikes = @bike.map {|bike| bike.bikes}
+     bikes.inject {|sum, bike| sum + bike}
+    end
+
 
 end

@@ -27,6 +27,8 @@ end
 
 #edit
 get '/bikes/:id/edit' do
+  @bike = Bike.find( params[:id] )
+    erb( :edit )
 end
 
 #update
@@ -36,3 +38,19 @@ end
 #delete
 delete '/bikes' do
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

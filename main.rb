@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('controllers/bikes_controller')
+require_relative('controllers/sales_controller')
 
 
 get '/' do

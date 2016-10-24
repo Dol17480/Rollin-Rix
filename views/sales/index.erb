@@ -1,0 +1,11 @@
+<div>
+  <% @sales.each do |sale| %>
+  <a href="/sales/<%= sale.id  %>"></a>
+  <br><p>bike_id: <%= bike.id %> 
+  </p> customer_id: <%= customer.id %>
+  <br><hr>
+  <% end %>
+   
+  <br>
+  <a href="/inventory">Back</a>
+</div>
