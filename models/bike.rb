@@ -61,7 +61,7 @@ class Bike
     '#{ @colour }',
     '#{ @size }',
     '#{ @price }'
-    WHERE id = #{@id};"
+    WHERE id = #{@id} RETURNING *;"
     SqlRunner.run(sql)
   end
 
@@ -76,25 +76,46 @@ class Bike
     return Bike.map_items(sql)
   end
 
-  def self.find(id)
-    sql = "SELECT * FROM bikes WHERE id = #{id}"
-    return Bike.map_items(sql)
+  def self.stock_count()
+    sql = "SELECT COUNT (*) FROM bikes;"
+    result = SqlRunner.run(sql)
+    return result.first['count'].to_i
   end
 
-  def self.delete_all()
-    sql = "DELETE FROM bikes;"
-    SqlRunner.run(sql)
+  def self.stock_level()
+   number = self.stock_count
+   case number
+   when (0..10)
+    return ("Stock level's low")
+  when(10..30)
+    return ("Stock level's okay")
+  when(30..45)
+    return ("Fully stocked")
+  else
+    return("Over stocked")
   end
-  
-  def self.map_items(sql)
-    bikes = SqlRunner.run(sql)
-    result = bikes.map { |bike| Bike.new( bike ) }
-    return result
-  end
+end
 
-  def self.map_item(sql)
-    result = Bike.map_items(sql)
-    return result.first
-  end
+
+def self.find(id)
+  sql = "SELECT * FROM bikes WHERE id = #{id}"
+  return Bike.map_item(sql)
+end
+
+def self.delete_all()
+  sql = "DELETE FROM bikes;"
+  SqlRunner.run(sql)
+end
+
+def self.map_items(sql)
+  bikes = SqlRunner.run(sql)
+  result = bikes.map { |bike| Bike.new( bike ) }
+  return result
+end
+
+def self.map_item(sql)
+  result = Bike.map_items(sql)
+  return result.first
+end
 
 end

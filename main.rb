@@ -10,6 +10,8 @@ end
 
 
 get '/inventory' do
+  @stock_count = Bike.stock_count
+  @stock_level = Bike.stock_level
   erb(:'inventory')
 
 end

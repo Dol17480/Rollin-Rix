@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%=  result = @bikes.count puts result%>
-
-
 <title>Rollin' Ric's</title>
   <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-<h3>Inventory ={result}</h3>
+<h3> Rollin' Ric's </h3>
+<h2>Inventory = <%= @stock_count %></h2>
+<h2>Stock level = <%= @stock_level %></h2>
 </body>
 </html>
 <div>
@@ -17,3 +16,5 @@
 <br>
 <br>
 <a href="/bikes">Bikes</a>
+<a href="/bikes">Order from supplier</a>
+<a href="/bikes/id/edit">Edit</a>

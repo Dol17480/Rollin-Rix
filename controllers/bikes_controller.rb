@@ -16,7 +16,7 @@ end
 post '/bikes' do
   @bike = Bike.new(params)
   @bike.save
-  redirect to( "bikes" )
+  redirect to("/bikes")
 end
 
 #show
@@ -28,17 +28,20 @@ end
 #edit
 get '/bikes/:id/edit' do
   @bike = Bike.find( params[:id] )
-    erb( :edit )
+    erb( :'bikes/edit' )
 end
 
 #update
 post '/bikes/:id' do
+  @bikes = Bike.update( params)
+  redirect to( "/bikes/#{params[:id]}")
 end
 
 #delete
-delete '/bikes' do
+delete '/bikes/:id' do
+  Bike.destroy( params[:id] )
+  redirect to('/bikes')
 end
-
 
 
 
