@@ -5,10 +5,70 @@
 
 input {
   margin: 20px;
-
 }
 
 label {
-
   margin: 20px;
 }
+body {
+  font-family: "Trebuchet MS";
+  margin: 0;
+}
+
+h3 {
+  color: black;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  background-color: navy;
+  color: white;
+  margin: 0 10px;
+  padding: 5px 15px;
+}
+
+nav a:hover {
+  background-color: grey;
+}
+
+nav {
+  padding: 10px;
+  background-color: lightblue;
+}
+
+form {
+  margin: 20px;
+}
+
+input {
+  margin: 5px;
+  font-size: 1em;
+}
+
+input[type=submit] {
+  background-color: lightblue;
+  border: none;
+  color: navy;
+}
+
+main ul li {
+  margin-bottom: 10px;
+}
+
+main {
+  margin: 10px;
+}
+
+body {
+    background-image: url("http://www.wall321.com/thumbnails/detail/20131014/bicycles%20typography_www.wall321.com_52.jpg");
+    background-size: 125%;
+    background-position: 10% -975%; 
+    background-size: cover;
+
+}
+</style>
