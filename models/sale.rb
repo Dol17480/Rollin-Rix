@@ -39,6 +39,11 @@ class Sale
     SqlRunner.run(sql)
   end
 
+  def self.delete()
+    sql = "DELETE FROM sales"
+    SqlRunner.run(sql)
+  end
+
   def self.map_items(sql)
     sales = SqlRunner.run(sql)
     result = sales.map { |sale| Sale.new( sale ) }

@@ -28,19 +28,19 @@ end
 
 #edit
 get '/bikes/:id/edit' do
-  @bike = Bike.find( params[:id] )
+  @bike = Bike.find( params[:id].to_i )
     erb( :'bikes/edit' )
 end
 
 #update
-post '/bikes/:id' do
+put '/bikes/:id' do
   @bikes = Bike.update( params)
   redirect to( "/bikes/#{params[:id]}")
 end
 
 #delete
 delete '/bikes/:id' do
-  Bike.destroy( params[:id] )
+  Bike.delete( params[:id] )
   redirect to('/bikes')
 end
 

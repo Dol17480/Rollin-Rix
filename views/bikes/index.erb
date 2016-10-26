@@ -1,6 +1,6 @@
 <div>
   <% @bikes.each do |bike| %>
-  <a href="/bikes/<%= bike.id  %>">View</a>
+  <a href="/bikes/<%= bike.id  %>/edit">Edit</a>
   <br><p> Category: <%= bike.category %> 
   </p> Type: <%= bike.type %>
   </p> Brand: <%= bike.brand_name %>
@@ -15,5 +15,4 @@
   <br>
   <a href="/inventory">Inventory</a>
   <br>
-  <a href="/bikes/id/edit">Edit</a>
 </div>

@@ -46,22 +46,8 @@ class Bike
     return bikes.map { |bike| Bike.new( bike ) }
   end
 
-  def update()
-    sql = "UPDATE bikes SET category,
-    type,
-    brand_name,
-    model,
-    colour,
-    size,
-    price ) VALUES (
-    '#{ @category }',
-    '#{ @type }',
-    '#{ @brand_name }',
-    '#{ @model }',
-    '#{ @colour }',
-    '#{ @size }',
-    '#{ @price }'
-    WHERE id = #{@id} RETURNING *;"
+  def self.update(params)
+   sql = "UPDATE bikes SET price = #{params['price']} WHERE id = #{params['id']} RETURNING *;"
     SqlRunner.run(sql)
   end
 
@@ -110,6 +96,11 @@ end
 
 def self.delete_all()
   sql = "DELETE FROM bikes;"
+  SqlRunner.run(sql)
+end
+
+def self.delete(id)
+  sql = "DELETE FROM bikes WHERE id = #{id};"
   SqlRunner.run(sql)
 end
 

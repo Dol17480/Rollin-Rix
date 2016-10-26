@@ -40,6 +40,6 @@ end
 
 #delete
 delete '/customers/:id' do
-  Customer.destroy( params[:id] )
+  Customer.delete( params[:id] )
   redirect to('/customers')
 end

@@ -2,6 +2,7 @@
 
 <form action="/customers/<%= @customer.id %>" method="post">
   <input type="hidden" name="_method" value="put">
+
   <label for="type">Name: </label>
   <input type="text" name="name" value="<%= @customer.name %>"><br>
   <br>
@@ -12,8 +13,8 @@
   <input type="text" name="phone" value="<%= @customer.phone %>"><br>
 <br>
 <br>
+<button type="submit">Edit customer</button>
 
-  <button type="submit">Edit customer</button>
 </form>
   <br>
   <form action="/customers/<%= @customer.id %>" method="post">

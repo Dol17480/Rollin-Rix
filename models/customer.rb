@@ -44,6 +44,11 @@ class Customer
     return Customer.map_items(sql)
   end
 
+  def self.delete(params)
+    sql = "DELETE FROM customers WHERE id = #{'id'};"
+    SqlRunner.run(sql)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM customers;"
     SqlRunner.run(sql)
