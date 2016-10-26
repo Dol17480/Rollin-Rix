@@ -1,11 +1,14 @@
 <div>
   <% @sales.each do |sale| %>
-  <a href="/sales/<%= sale.id  %>">View</a>
+  <a href="/sales/<%= sale.id  %>"></a>
   <br>
-  <p>bike_id: <%= bike_id %></p>
-  <p>customer_id: <%= customer_id %></p>
+  <br>
+  <a href="/bikes/<%= sale.bike_id %>" ><p>Bike_id: <%= sale.bike_id %></p></a>
+  <br>
+  <p>Customer_id: <%= sale.customer_id %></p>
   <br><hr>
   <% end %>
+ 
    
   <br>
    <a href="/bikes/new">Add new bike</a><br>

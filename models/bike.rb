@@ -84,16 +84,22 @@ class Bike
 
   def self.stock_level()
    number = self.stock_count
-   case number
-   when (0..10)
-    return ("Stock level's low")
-  when(10..30)
-    return ("Stock level's okay")
-  when(30..45)
-    return ("Fully stocked")
-  else
-    return("Over stocked")
+    case number
+    when (0..10)
+      return ("Stock level's low")
+    when(10..30)
+      return ("Stock level's okay")
+    when(30..45)
+      return ("Fully stocked")
+    else
+      return("Over stocked")
+    end
   end
+
+def self.stock_category(category)
+  sql = "SELECT COUNT (*) FROM bikes WHERE category = '#{category}'"
+  result = SqlRunner.run(sql)
+  return result.first['count'].to_i
 end
 
 

@@ -1,6 +1,7 @@
 require 'pry-byebug'
 require_relative('../models/bike')
 
+
 #index
 get '/bikes' do
   @bikes = Bike.all
