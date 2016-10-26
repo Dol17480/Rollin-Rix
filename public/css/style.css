@@ -38,7 +38,6 @@ nav a:hover {
 
 nav {
   padding: 10px;
-  background-color: lightblue;
 }
 
 form {
@@ -51,7 +50,7 @@ input {
 }
 
 input[type=submit] {
-  background-color: lightblue;
+  background-color: yellow;
   border: none;
   color: navy;
 }
@@ -65,9 +64,9 @@ main {
 }
 
 body {
-    background-image: url("http://www.wall321.com/thumbnails/detail/20131014/bicycles%20typography_www.wall321.com_52.jpg");
-    background-size: 125%;
-    background-position: 10% -975%; 
+    background-image: url("http://www.walldevil.com/wallpapers/a77/wall-bike-bicycle.jpg");
+    background-size: 50%;
+    background-position: 50% 290%; 
     background-size: cover;
 
 }
